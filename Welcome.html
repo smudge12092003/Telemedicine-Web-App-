@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telemedicine.com</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('applogo.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        p {
+            font-size: 4em;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .button {
+            display: flex;
+            margin-top: 20px;
+        }
+        .button button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .button button:hover {
+            background-color: white;
+            color: black;
+        }
+        .button a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body> 
+    <div class="box1">
+        <center>
+            <p id="welcomeText"><b>Welcome to Telemedicine App</b></p>
+        </center>
+    </div>
+
+    <script>
+        // Get the welcome text
+        var welcomeText = document.getElementById("welcomeText").textContent;
+        // Split the text into an array of words
+        var words = welcomeText.split(" ");
+        // Clear the original text content
+        document.getElementById("welcomeText").textContent = "";
+
+        // Function to display words one by one
+        function displayWords() {
+            // Check if there are words left to display
+            if (words.length > 0) {
+                // Append the next word to the text content
+                document.getElementById("welcomeText").textContent += words.shift() + " ";
+                // Call the function again after a delay (adjust as needed)
+                setTimeout(displayWords, 300);
+            }
+        }
+
+        // Call the function to start displaying words
+        displayWords();
+    </script>
+
+    <div class="button">
+        <button><a href="index.jsp">Login</a></button>
+        <span>or</span>
+        <button><a href="Signup.html">Signup</a></button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container2 {
+                display: flex;
+                background-color: black;
+                color: white;
+            }
+            .container2 a {
+                text-decoration: none;
+                color: white;
+            }
+input[type=text], input[type=email], input[type=tel], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 200px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button {
+    display: flex;
+    justify-content: space-around;
+}
+
+.container {
+    margin-left: 120px;
+    margin-right: 120px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Button Styles */
+.button button {
+    padding: 14px 20px;
+    margin-right: 120px;
+    margin-left: 120px;
+    border: 2px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button button.submit {
+    background-color: transparent;
+    color: green;
+}
+
+.button button.back {
+    background-color: transparent;
+    color: red;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+}
+</style>
+</head>
+<body>
+<h2 style="color: black; font-family: 'Times New Roman', Times, serif; font-size: xxx-large;background-color:#D3D3D3; "><center>Contact Us</center></h2>
+<div class="container1" >
+</div>
+<div class="container2">
+<a href="htm_Main.jsp">HOME</a>&nbsp;|&nbsp;
+            <a href="htm_About.html">ABOUT</a>&nbsp;|&nbsp;
+            <a href="htm_tablets.html">TABLETS</a>&nbsp;|&nbsp;
+            <a href="htm_Contact.html">CONTACT</a>
+</div>
+<form>
+  <div class="container" style="margin-top: 20px; background-color:#f1c27d;">
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Your Name" name="name" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="email" placeholder="Enter Your Email" name="email" required>
+
+    <label for="phone"><b>Contact Number</b></label>
+    <input type="tel" placeholder="Enter Your Contact Number" name="phone" pattern="[0-9]{10}" required>
+
+    <label for="message"><b>Message</b></label>
+    <textarea placeholder="Enter Your Message" name="message" required></textarea>
+  </div>
+  <div class="button" style="background-color: white;margin-left: 120px;margin-right: 120px;padding-bottom: 10px;">
+    <button type="submit" class="submit" style="color: green;"><a href="contact.html" style="color:green;">Submit</a></button>
+    <button type="button" class="back" style="color: red;"><a href="Welcome.html" style="color:red;">Back</a></button>
+  </div>
+</form>
+
+</body>
+</html>

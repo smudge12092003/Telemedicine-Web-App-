@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telemedicine.com</title>
+    <style>
+        .container1 {
+            color: black;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container2 {
+            display: flex;
+            background-color: black;
+            color: white;
+        }
+
+        .container2 a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .container3 {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .container4 {
+            color: black;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .tablet1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            background-color: #f1c27d;
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 5px;
+            align-items: center;
+            width: 250px; /* Adjust width for better display on smaller screens */
+        }
+
+        .box img {
+            height: 200px;
+            width: 100%;
+            margin-bottom: 10px;
+            border: 1px solid black;
+        }
+
+        .box p {
+            margin: 0;
+        }
+
+        .search-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 14px 14px 14px 14px;
+            border: 2px solid;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: transparent;
+            color: green;
+            width: 200px;
+        }
+
+        /* Media Queries */
+        @media only screen and (max-width: 768px) {
+            .container1 {
+                flex-direction: column;
+                align-items: center;
+            }
+            .container2 {
+                flex-direction: column;
+                align-items: center;
+            }
+            .box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <center><h1>TELEMEDICINE APP</h1></center>
+        <button class="search-button" onclick="searchTablet()">Search</button>
+    </div>
+    <div class="container2">
+       <a href="htm_Main.jsp">HOME</a>&nbsp;|&nbsp;
+            <a href="htm_About.html">ABOUT</a>&nbsp;|&nbsp;
+            <a href="htm_tablets.html">TABLETS</a>&nbsp;|&nbsp;
+            <a href="htm_Contact.html">CONTACT</a>
+    </div>
+    <div class="container4">
+        <h1 style="background-color:#D3D3D3; ">Get your Tablets</h1>
+    </div>
+    <hr width="100%">
+    <div class="container">
+        <div class="tablet1">
+            <div class="box">
+                <img src="https://res.fkhealthplus.com/incom/images/product/Allercet-Cold-1626420608-10072594-1.jpg" alt="Allercet Cold">
+                <p>Allercet Cold - Rs. 100</p>
+            </div>
+            <div class="box">
+                <img src="https://assets.truemeds.in/Images/ProductImage/TM-TACR1-011691/DOLO-650-MG-Tablet-15_1.webp" alt="Dolo 650">
+                <p>Dolo 650 - Rs. 150</p>
+            </div>
+            <div class="box">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/12/371192292/WD/JP/QO/148077540/img-20231222-171543.jpg" alt="Okacet">
+                <p>Okacet - Rs. 120</p>
+            </div>
+            <div class="box">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2022/4/OY/OQ/NG/1090199/paracetamol-tablet-625mg-paracip.jpg" alt="Paracetomol">
+                <p>Paracetomol - Rs. 80</p>
+            </div>
+            <div class="box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl1a-lWwN6JmVvaLD2jSr7e4eQLGRJg0zNsA&s" alt="Feverright">
+                <p>Feverright - Rs. 90</p>
+            </div>
+            <div class="box">
+                <img src="https://5.imimg.com/data5/ANDROID/Default/2023/5/310109190/WM/RO/LK/63898948/product-jpeg.jpg" alt="Neurobin">
+                <p>Neurobin Forte - Rs. 200</p>
+            </div>
+            <div class="box">
+                <img src="https://m.media-amazon.com/images/I/719+XarGSEL._AC_UF1000,1000_QL80_.jpg" alt="Alfalfa">
+                <p>Alflafa Tonic - Rs. 180</p>
+            </div>
+            <div class="box">
+                <img src="https://www.netmeds.com/images/product-v1/600x600/109486/saridon_headache_relief_tablet_10s_663469_0_0.jpg" alt="Saridon">
+                <p>Saridon - Rs. 120</p>
+            </div>
+        </div>
+    </div>
+    <hr width="100%">
+    <a href="tablets_form.html"><center><button style="color: green;">Order</button></center></a>
+
+    <script>
+        function searchTablet() {
+            var tabletName = prompt("Enter the tablet name to search:");
+            if (tabletName) {
+                var boxes = document.querySelectorAll('.box');
+                var found = false;
+                boxes.forEach(function(box) {
+                    var name = box.querySelector('p').innerText.toLowerCase();
+                    if (name.includes(tabletName.toLowerCase())) {
+                        box.style.display = 'block';
+                        found = true;
+                    } else {
+                        box.style.display = 'none';
+                    }
+                });
+                if (!found) {
+                    alert("Tablet not found!");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
